@@ -14,8 +14,6 @@ trait CustomValidate
         $number = preg_match('/[0-9]/', $password);
         $specialChar = preg_match('/[^\w]/', $password);
 
-        // dd($lowercase, $uppercase, $number, $specialChar);
-
         if (!$lowercase) {
             throw ValidationException::withMessages(['password' => 'O campo password tem que ter uma letra minúscula.']);
         } else if (!$uppercase) {
